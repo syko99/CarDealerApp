@@ -7,7 +7,7 @@ import com.google.gson.*;
 
 public class Exporter {
 
-    private static DealerList dealerList = UIController.dealerList;
+    private static DealerList dealerList = CarDealerApplication.dealerList;
     private static Gson exportGson = new GsonBuilder().setPrettyPrinting().create();
     private static PrintWriter output;
 
@@ -45,7 +45,7 @@ public class Exporter {
     // Exporting master save file including all dealers
     public static void exportSaveFile() throws FileNotFoundException {
 
-        File exportedFile = new File(Start.SAVE_FILE);
+        File exportedFile = new File(CarDealerApplication.SAVE_FILE);
         output = new PrintWriter(exportedFile);
         output.println("{\n\"master_inventory\":[");
 

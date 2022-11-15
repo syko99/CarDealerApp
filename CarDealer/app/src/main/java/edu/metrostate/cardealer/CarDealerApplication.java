@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarDealerApplication extends Application {
-    private final List<Vehicle> vehicleList = new ArrayList<>();
+    private final List<Vehicle> vehicleList = new ArrayList<>(); //TODO: Remove this line
+    public static DealerList dealerList = new DealerList();
+    public static final String SAVE_FILE = "MASTER_SAVE_FILE.json";
 
     @Override
     public void onCreate() {

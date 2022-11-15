@@ -22,7 +22,7 @@ import com.google.gson.*;
 
 public class Importer {
 
-    private static DealerList dealerList = UIController.dealerList;
+    private static DealerList dealerList = CarDealerApplication.dealerList;
     private static Gson gson = new GsonBuilder().setNumberToNumberStrategy(ToNumberPolicy.LONG_OR_DOUBLE).create();
     private static DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
     private static Pattern pattern = Pattern.compile("E(\\d+)");
@@ -31,8 +31,7 @@ public class Importer {
     // type
     public static void importFile() {
 
-        UIController.fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
-        String filePath = UIController.fileChooser.showOpenDialog(null).getAbsolutePath();
+        String filePath = "CarDealer/app/src/main/java/edu/metrostate/cardealer/MASTER_SAVE_FILE.json";
         String fileType = FilenameUtils.getExtension(filePath);
 
         if (fileType.equalsIgnoreCase("json")) {
@@ -42,7 +41,6 @@ public class Importer {
         } else {
             System.out.println("~~~ Error: File type not supported, must be json or xml.");
         }
-        return;
     }
 
     // Reads user selected json file and parses into json objects.
