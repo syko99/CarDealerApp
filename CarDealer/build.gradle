@@ -3,9 +3,3 @@ plugins {
     id 'com.android.application' version '7.3.0' apply false
     id 'com.android.library' version '7.3.0' apply false
 }
-
-dependencies {
-    implementation 'com.google.code.gson:gson:2.10'
-    implementation 'commons-io:commons-io:2.11.0'
-
-}
