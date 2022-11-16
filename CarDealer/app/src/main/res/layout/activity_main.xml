@@ -10,23 +10,13 @@
         android:id="@+id/show_vehicle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:width="250dp"
         android:text="Show Vehicle List"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="114dp" />
-
-    <Button
-        android:id="@+id/transfer_vehicle_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="250dp"
-        android:text="Transfer Vehicle"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
     <Button
         android:id="@+id/add_vehicle_btn"
@@ -34,12 +24,10 @@
         android:layout_height="wrap_content"
         android:width="250dp"
         android:text="Add Vehicle"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.335" />
+        app:layout_constraintTop_toBottomOf="@+id/import_file_btn" />
 
     <Button
         android:id="@+id/dealer_name_btn"
@@ -47,12 +35,10 @@
         android:layout_height="wrap_content"
         android:width="250dp"
         android:text="Modify Dealer Name"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintTop_toBottomOf="@+id/transfer_vehicle_btn" />
 
     <Button
         android:id="@+id/dealer_acq_btn"
@@ -60,12 +46,10 @@
         android:layout_height="wrap_content"
         android:width="250dp"
         android:text="Dealer Acquisition"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424" />
+        app:layout_constraintTop_toBottomOf="@+id/add_vehicle_btn" />
 
     <Button
         android:id="@+id/vehicle_rental_btn"
@@ -73,12 +57,10 @@
         android:layout_height="wrap_content"
         android:width="250dp"
         android:text="Vehicle Rental Status"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        app:layout_constraintTop_toBottomOf="@+id/add_dealer_btn" />
 
     <Button
         android:id="@+id/add_dealer_btn"
@@ -87,31 +69,9 @@
         android:width="250dp"
         android:text="Add Dealer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="407dp" />
-
-    <Button
-        android:id="@+id/export_dealer_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="250dp"
-        android:text="Export Dealer to File"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="350dp" />
-
-    <Button
-        android:id="@+id/remove_dealer_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="250dp"
-        android:text="Remove Dealer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintTop_toBottomOf="@+id/export_dealer_btn" />
 
     <Button
         android:id="@+id/import_file_btn"
@@ -120,16 +80,51 @@
         android:width="250dp"
         android:text="Import File"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="171dp" />
+        app:layout_constraintTop_toBottomOf="@+id/show_vehicle" />
+
+    <Button
+        android:id="@+id/export_dealer_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="250dp"
+        android:text="Export Dealer to File"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dealer_acq_btn" />
+
+    <Button
+        android:id="@+id/remove_dealer_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="250dp"
+        android:text="Remove Dealer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dealer_name_btn" />
+
+    <Button
+        android:id="@+id/transfer_vehicle_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="250dp"
+        android:text="Transfer Vehicle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_rental_btn" />
 
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="Welcome to the Car Dealer Application!"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="44dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
