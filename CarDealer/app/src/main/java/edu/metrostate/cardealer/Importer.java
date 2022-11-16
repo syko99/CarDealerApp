@@ -1,5 +1,12 @@
 package edu.metrostate.cardealer;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Environment;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.File;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -20,7 +27,7 @@ import org.apache.commons.io.FilenameUtils;
 
 import com.google.gson.*;
 
-public class Importer {
+public class Importer extends Application {
 
     private static DealerList dealerList = CarDealerApplication.dealerList;
     private static Gson gson = new GsonBuilder().setNumberToNumberStrategy(ToNumberPolicy.LONG_OR_DOUBLE).create();
@@ -29,8 +36,9 @@ public class Importer {
 
     // user chooses file type to import, calls respective import method for file
     // type
-    public static void importFile() {
+    public void importFile() {
 
+        File directory = getExternalFilesDir(null);
         String filePath = "CarDealer/app/src/main/java/edu/metrostate/cardealer/MASTER_SAVE_FILE.json";
         String fileType = FilenameUtils.getExtension(filePath);
 

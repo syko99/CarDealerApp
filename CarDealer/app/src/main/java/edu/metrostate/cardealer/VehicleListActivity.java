@@ -6,9 +6,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class VehicleListActivity extends AppCompatActivity {
 
@@ -19,20 +21,23 @@ public class VehicleListActivity extends AppCompatActivity {
 
         // Get the application instance from the activity
         CarDealerApplication app = (CarDealerApplication) getApplication();
-
         // Create an adapter for the list view
         VehicleAdapter adapter = new VehicleAdapter(this, app.getVehicleList());
 
         // Find the list view and add the adapter
-        ListView vehicleList = ((ListView)findViewById(R.id.vehicle_list));
-        vehicleList.setAdapter(adapter);
+//        ListView vehicleList = ((ListView)findViewById(R.id.vehicle_list));
+//        vehicleList.setAdapter(adapter);
+        app.loadSaveFile();
+        TextView title = (TextView) findViewById(R.id.title);
+        title.setText(CarDealerApplication.dealerList.printFullInventory());
+        title.setMovementMethod(new ScrollingMovementMethod());
 
-        vehicleList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                showDialog(adapter.getItem(position));
-            }
-        });
+//        vehicleList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                showDialog(adapter.getItem(position));
+//            }
+//        });
 
 
     }
@@ -44,10 +49,9 @@ public class VehicleListActivity extends AppCompatActivity {
                 .setCancelable(false)
                 .setTitle("Vehicle ID: " + vehicle.getId())
                 .setMessage("Model: " + vehicle.getModel())
-                .setPositiveButton( "OK", (dialog1, id) -> dialog1.dismiss()).create();
+                .setPositiveButton("OK", (dialog1, id) -> dialog1.dismiss()).create();
 
         dialog.show();
-
 
 
     }
