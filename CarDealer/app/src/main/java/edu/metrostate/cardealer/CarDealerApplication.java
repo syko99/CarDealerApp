@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarDealerApplication extends Application {
-    private final List<Vehicle> vehicleList = new ArrayList<>(); //TODO: Remove this line
+    private final List<Vehicle> vehicleList = new ArrayList<>();
     public static DealerList dealerList = new DealerList();
     public static final String SAVE_FILE = "MASTER_SAVE_FILE.json";
 
@@ -18,16 +18,20 @@ public class CarDealerApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-
-        //TODO: Remove this code
-        for(int i = 0; i < 20; i++) {
-            vehicleList.add(new Vehicle(Integer.toString(i), "Model " + i));
-        }
-
     }
-
     public List<Vehicle> getVehicleList() {
         return vehicleList;
+    }
+
+    public DealerList getDealerList() {
+        return dealerList;
+    }
+
+    public void loadSaveFile() {
+        File externalDir = getExternalFilesDir(null);
+        File saveFile = new File(externalDir, SAVE_FILE);
+        String filepath = saveFile.getAbsolutePath();
+        Importer.importJSON(filepath);
     }
 
     public void writeFile() {
@@ -35,7 +39,6 @@ public class CarDealerApplication extends Application {
         //TODO: Remove this code
         // Gets the output path which is /sdcard/Android/data/edu.metrostate.cardealer/files directory
         File externalDir = getExternalFilesDir(null);
-
         // Establishes the output file as "myfile.txt"
         File outputFile = new File(externalDir, "myfile.txt");
 
