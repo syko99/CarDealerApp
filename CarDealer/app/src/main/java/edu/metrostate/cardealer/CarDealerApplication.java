@@ -17,8 +17,9 @@ public class CarDealerApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        this.loadSaveFile();
     }
+
     public List<Vehicle> getVehicleList() {
         return vehicleList;
     }

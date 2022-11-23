@@ -36,10 +36,9 @@ public class Importer extends Application {
 
     // user chooses file type to import, calls respective import method for file
     // type
-    public void importFile() {
+    public static void importFile(File file) {
 
-        File directory = getExternalFilesDir(null);
-        String filePath = "CarDealer/app/src/main/java/edu/metrostate/cardealer/MASTER_SAVE_FILE.json";
+        String filePath = file.getAbsolutePath();
         String fileType = FilenameUtils.getExtension(filePath);
 
         if (fileType.equalsIgnoreCase("json")) {
