@@ -1,6 +1,7 @@
 package edu.metrostate.cardealer;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,8 +29,6 @@ public class FileListAdapter extends ArrayAdapter<File> {
 
         TextView id = convertView.findViewById(R.id.file_name);
         id.setText(getItem(position).getName());
-
-
 
         return convertView;
     }
