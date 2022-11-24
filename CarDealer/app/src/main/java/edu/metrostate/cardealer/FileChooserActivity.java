@@ -1,5 +1,6 @@
 package edu.metrostate.cardealer;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,8 +25,9 @@ public class FileChooserActivity extends AppCompatActivity {
         fileList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 File file = (File) parent.getItemAtPosition(position);
-                Importer.importFile(file);
+//                Importer.importFile(file);
             }
         });
     }
