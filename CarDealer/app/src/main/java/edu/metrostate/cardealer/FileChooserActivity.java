@@ -1,16 +1,23 @@
 package edu.metrostate.cardealer;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.File;
 
 public class FileChooserActivity extends AppCompatActivity {
 
+    File selectedFile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +33,36 @@ public class FileChooserActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                File file = (File) parent.getItemAtPosition(position);
-//                Importer.importFile(file);
+                selectedFile = (File) parent.getItemAtPosition(position);
+
             }
+        });
+
+        findViewById(R.id.import_btn).setOnClickListener(new View.OnClickListener() {
+
+            Toast toast;
+            Context context = getApplicationContext();
+            CharSequence msg;
+            int duration = Toast.LENGTH_SHORT;
+
+            @Override
+            public void onClick(View v) {
+                if (selectedFile != null) {
+                    Importer.importFile(selectedFile);
+                    msg = "Import Successful.";
+                    toast = Toast.makeText(context, msg, duration);
+                    toast.show();
+                } else {
+                    msg = "Import Failed.";
+                    toast = Toast.makeText(context, msg, duration);
+                    toast.show();
+                }
+            }
+
         });
     }
 
-    public File[] populateFileList(){
+    public File[] populateFileList() {
         File directory = getExternalFilesDir(null);
         File[] directoryArray = directory.listFiles();
         return directoryArray;
