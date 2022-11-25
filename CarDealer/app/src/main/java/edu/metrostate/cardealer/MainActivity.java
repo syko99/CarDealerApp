@@ -48,5 +48,17 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        findViewById(R.id.export_dealer_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create the intent with the new activity
+                Intent intent = new Intent(MainActivity.this, ExportDealerActivity.class);
+
+                // Launch the new Activity
+                startActivity(intent);
+            }
+
+        });
     }
 }
