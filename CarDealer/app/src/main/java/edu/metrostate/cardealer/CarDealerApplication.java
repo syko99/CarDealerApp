@@ -20,6 +20,7 @@ public class CarDealerApplication extends Application {
         this.loadSaveFile();
     }
 
+
     public List<Vehicle> getVehicleList() {
         return vehicleList;
     }
