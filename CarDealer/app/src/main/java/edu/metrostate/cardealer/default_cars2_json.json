@@ -1,0 +1,13 @@
+{
+  "car_inventory": [
+    {
+      "dealership_id": "99999",
+      "Vehicle_type": "sports car",
+      "vehicle_manufacturer": "Lexus",
+      "vehicle_model": "LFA",
+      "vehicle_id": "229393",
+      "price": 125000,
+      "acquisition_date": 1515354694451
+    }
+  ]
+}

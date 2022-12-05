@@ -19,27 +19,9 @@ public class VehicleListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_list);
 
-        // Get the application instance from the activity
-        CarDealerApplication app = (CarDealerApplication) getApplication();
-        // Create an adapter for the list view
-        VehicleAdapter adapter = new VehicleAdapter(this, app.getVehicleList());
-
-        // Find the list view and add the adapter
-//        ListView vehicleList = ((ListView)findViewById(R.id.vehicle_list));
-//        vehicleList.setAdapter(adapter);
-        app.loadSaveFile();
         TextView title = (TextView) findViewById(R.id.title);
         title.setText(CarDealerApplication.dealerList.printFullInventory());
         title.setMovementMethod(new ScrollingMovementMethod());
-
-//        vehicleList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                showDialog(adapter.getItem(position));
-//            }
-//        });
-
-
     }
 
     public void showDialog(Vehicle vehicle) {
