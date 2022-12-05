@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">CarDealer</string>
+
+    <string name="add_vehicle">Add Vehicle</string>
+
+    <string name="dealer_id">Dealer ID:</string>
+    <string name="vehicle_type">Vehicle Type:</string>
+    <string name="manufacturer">Manufacturer</string>
+    <string name="model">Model</string>
+    <string name="vehicle_id">Vehicle ID:</string>
+    <string name="price">Price:</string>
+    <string name="acquisition_date">Acquisition Date:</string>
+    <string name="rental_status">Rental Status:</string>
 </resources>
