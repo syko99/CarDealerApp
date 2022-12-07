@@ -11,4 +11,7 @@
     <string name="price">Price:</string>
     <string name="acquisition_date">Acquisition Date:</string>
     <string name="rental_status">Rental Status:</string>
+    <string name="dealer_name">Dealer Name</string>
+    <string name="acquisition">Acquisition</string>
+    <string name="add_dealer">Add Dealer</string>
 </resources>

@@ -26,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.add_dealer_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,AddDealerActivity.class));
+            }
+        });
+
         findViewById(R.id.show_vehicle).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
