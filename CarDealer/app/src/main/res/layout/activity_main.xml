@@ -106,6 +106,18 @@
         app:layout_constraintTop_toBottomOf="@+id/dealer_name_btn" />
 
     <Button
+        android:id="@+id/edit_dealer_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:width="250dp"
+        android:text="Edit Dealer Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dealer_name_btn" />
+
+    <Button
         android:id="@+id/transfer_vehicle_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
