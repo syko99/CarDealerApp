@@ -14,4 +14,14 @@
     <string name="dealer_name">Dealer Name</string>
     <string name="acquisition">Acquisition</string>
     <string name="add_dealer">Add Dealer</string>
+    <string name="back_button">Back</string>
+
+    <string-array name="vehicleTypes">
+        <item><i>select vehicle</i></item>
+        <item>Pickup</item>
+        <item>Sedan</item>
+        <item>Sports Car</item>
+        <item>SUV</item>
+    </string-array>
+
 </resources>
