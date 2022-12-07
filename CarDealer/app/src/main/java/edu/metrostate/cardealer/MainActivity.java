@@ -56,6 +56,17 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        findViewById(R.id.add_vehicle_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create the intent with the new activity
+                Intent intent = new Intent(MainActivity.this, AddVehicleActivity.class);
+
+                // Launch the new Activity
+                startActivity(intent);
+            }
+        });
+
         findViewById(R.id.export_dealer_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

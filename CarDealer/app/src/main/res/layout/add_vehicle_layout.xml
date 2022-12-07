@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <RadioGroup
+        android:id="@+id/rentalStatusGroup"
         android:layout_width="118dp"
         android:layout_height="99dp"
         android:layout_centerInParent="true"
@@ -18,15 +19,15 @@
             android:id="@+id/radio_available"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:checked="false"
-            android:onClick="checkButton"
+            android:checked="true"
             android:text="Available" />
 
         <RadioButton
             android:id="@+id/radio_loaned"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:text="Loaned" />
+            android:text="Loaned"
+            android:checked="false" />
     </RadioGroup>
 
     <TextView
@@ -92,10 +93,10 @@
         android:text="@string/vehicle_id"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.005" />
 
     <TextView
         android:id="@+id/priceTitle"
@@ -165,39 +166,26 @@
 
     <TextView
         android:id="@+id/dealerIDtitle"
-        android:layout_width="74dp"
+        android:layout_width="85dp"
         android:layout_height="21dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="105dp"
-        android:layout_marginEnd="315dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="295dp"
         android:layout_marginBottom="618dp"
         android:gravity="left"
         android:text="@string/dealer_id"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="228dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="370dp"
-        android:layout_marginEnd="31dp"
-        android:ems="10"
-        android:hint="Select Date"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/acquisitionDateTitle"
-        app:layout_constraintTop_toBottomOf="@+id/addVehicleTitle" />
 
     <Button
         android:id="@+id/addVehicleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="95dp"
         android:layout_marginEnd="130dp"
         android:text="@string/add_vehicle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -214,7 +202,6 @@
         android:layout_marginEnd="58dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter Dealer ID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dealerIDtitle"
         app:layout_constraintTop_toBottomOf="@+id/addVehicleTitle" />
@@ -223,13 +210,13 @@
         android:id="@+id/editManufacturer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="62dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="57dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter Manufacturer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/manufacturerTitle"
         app:layout_constraintTop_toBottomOf="@+id/editDealerID" />
 
@@ -237,36 +224,69 @@
         android:id="@+id/editModel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="7dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter Model"
-        app:layout_constraintTop_toBottomOf="@+id/editManufacturer"
-        tools:layout_editor_absoluteX="147dp" />
-
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="281dp" />
+        app:layout_constraintStart_toEndOf="@+id/modelTitle"
+        app:layout_constraintTop_toBottomOf="@+id/editManufacturer" />
 
     <Spinner
         android:id="@+id/spinner_vehicles"
         android:layout_width="218dp"
         android:layout_height="32dp"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="144dp" />
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="49dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vehicleTypeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/editDealerID" />
 
     <EditText
         android:id="@+id/editPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="number"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="326dp" />
+        app:layout_constraintStart_toEndOf="@+id/priceTitle"
+        app:layout_constraintTop_toBottomOf="@+id/editVehicleID" />
+
+    <EditText
+        android:id="@+id/editVehicleID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/vehicleIDTitle"
+        app:layout_constraintTop_toBottomOf="@+id/editModel" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="77dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="29dp"
+        android:text="@string/back_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addVehicleButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rentalStatusTitle" />
+
+    <EditText
+        android:id="@+id/dateEditView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/acquisitionDateTitle"
+        app:layout_constraintTop_toBottomOf="@+id/editPrice" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
